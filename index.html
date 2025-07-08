@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mohit Jamaiwar | Cybersecurity Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
   <style>
     * {
       margin: 0;
@@ -108,14 +110,36 @@
     transform: scale(1.05);
     box-shadow: 0 0 25px #00ffcc, 0 0 45px #00ffcc;
   }
+  
+    #bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    z-index: -1;
+    object-fit: cover;
+    filter: brightness(0.3) contrast(1.1);
+  }
+
+  body {
+    background: transparent;
+  }
   </style>
 </head>
 <body>
+<!-- Background Video -->
+<video autoplay muted loop id="bg-video">
+  <source src="bg.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+
 
 <section style="display: flex; justify-content: space-between; align-items: center; padding: 40px 20px; background-color: #0d1117; flex-wrap: wrap; border-radius: 20px;">
   <div style="flex: 1; min-width: 250px;">
     <h1 style="color: #c9d1d9; font-size: 3em;">Mohit Jamaiwar</h1>
-    <p style="color: #8b949e; font-size: 1.2em;">Cybersecurity Enthusiast | Ethical Hacker in Making 🛡️</p>
+    <p id="typed-text" style="color: #00ffcc; font-size: 1.2em;"></p>
   </div>
   <div style="flex: 0 0 auto; margin-top: 20px;">
     <img src="profile.jpg" alt="My Photo" style="max-width: 150px; border-radius: 12px; border: 2px solid #00ffcc; box-shadow: 0 0 10px #00ffcc;">
@@ -189,6 +213,21 @@
   <footer>
     ⛓️ Portfolio secured & signed by ChatGPT 🖤
   </footer>
-
+<script>
+  var typed = new Typed("#typed-text", {
+    strings: [
+      "Cybersecurity Enthusiast 💻",
+      "Ethical Hacker in Making 🛡️",
+      "CTF Player 🧠",
+      "Bug Bounty Hunter 🔍"
+    ],
+    typeSpeed: 50,
+    backSpeed: 30,
+    backDelay: 1500,
+    loop: true,
+    showCursor: true,
+    cursorChar: '|',
+  });
+</script>
 </body>
 </html>
